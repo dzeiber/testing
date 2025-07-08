@@ -15,18 +15,18 @@
 
     <!-- Layer 2: Wave Back (Starts near bottom) -->
     <img id="wave-back" src="wave-back.png" alt="Wave Back"
-         style="position:absolute; top:calc(100% - 150px); left:0; width:100%; height:auto; z-index:2;" />
+         style="position:absolute; top:calc(100% - 120px); left:0; width:100%; height:auto; z-index:2;" />
 
     <!-- Layer 3: Sinking Text -->
     <div id="sinking-text"
          style="position:absolute; top:40%; left:50%; transform:translate(-50%, -50%);
-                font-size:48px; color:white; font-family:'Open Sans', sans-serif; font-weight:700; z-index:3;">
+                font-size:100pt; color:white; font-family:'Open Sans', sans-serif; font-weight:700; z-index:3;">
       SINKING TEXT
     </div>
 
     <!-- Layer 4: Top Wave (Starts near bottom) -->
     <img id="wave-top" src="wave.png" alt="Top Wave"
-         style="position:absolute; top:calc(100% - 150px); left:0; width:100%; height:auto; z-index:4;" />
+         style="position:absolute; top:calc(100% - 120px); left:0; width:100%; height:auto; z-index:4;" />
 
   </div>
 
@@ -40,7 +40,7 @@
     window.addEventListener("scroll", () => {
       const scrollY = window.scrollY;
 
-      // Move waves to the left
+      // Move waves to the left when scrolling down, right when scrolling up
       waveTop.style.left = `${-scrollY * 0.6}px`;
       waveBack.style.left = `${-scrollY * 0.3}px`;
 
