@@ -3,9 +3,9 @@
 <html>
 <head>
   <title>Scroll Animation Layout</title>
-  https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap
+  <link href="https://fonts.googleapis.com/cssn+Sans:wght@700&display=swap
 </head>
-<body style="margin:0; padding:0; overflow-x:hidden; background:#000; height:3000px;">
+<body style="margin:0; padding:0; overflow-x:hidden; background:#bfdf7a; height:3000px;">
 
   <div style="position:relative; width:1280px; height:100vh; margin:auto; overflow:hidden;">
 
@@ -13,20 +13,20 @@
     <img id="bg" src="bg-image.jpg" alt="Background"
          style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:1; transform:scale(1); transition:transform 0.1s;" />
 
-    <!-- Layer 2: Wave Back (Starts near bottom, shifted right) -->
+    <!-- Layer 2: Wave Back (Aligned to bottom, shifted right) -->
     <img id="wave-back" src="wave-back.png" alt="Wave Back"
-         style="position:absolute; top:calc(100% - 120px); left:300px; width:100%; height:auto; z-index:2;" />
+         style="position:absolute; bottom:0; left:300px; width:100%; height:auto; z-index:2;" />
 
     <!-- Layer 3: Sinking Text -->
     <div id="sinking-text"
          style="position:absolute; top:40%; left:50%; transform:translate(-50%, -50%);
-                font-size:200pt; color:white; font-family:'Open Sans', sans-serif; font-weight:700; z-index:3;">
+                font-size:100pt; color:white; font-family:'Open Sans', sans-serif; font-weight:700; z-index:3;">
       SINKING TEXT
     </div>
 
-    <!-- Layer 4: Top Wave (Starts near bottom, shifted right) -->
+    <!-- Layer 4: Top Wave (Aligned to bottom, shifted right) -->
     <img id="wave-top" src="wave.png" alt="Top Wave"
-         style="position:absolute; top:calc(100% - 120px); left:300px; width:100%; height:auto; z-index:4;" />
+         style="position:absolute; bottom:0; left:300px; width:100%; height:auto; z-index:4;" />
 
   </div>
 
