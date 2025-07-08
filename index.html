@@ -3,9 +3,9 @@
 <html>
 <head>
   <title>Scroll Animation Layout</title>
-  <link href="https://fonts.googleapis.com/cssn+Sans:wght@700&display=swap
+  https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap
 </head>
-<body style="margin:0; padding:0; overflow-x:hidden; background:#bfdf7a; height:12000px;">
+<body style="margin:0; padding:0; overflow-x:hidden; background:#000;">
 
   <div style="position:relative; width:1280px; height:100vh; margin:auto; overflow:hidden;">
 
@@ -20,7 +20,7 @@
     <!-- Layer 3: Sinking Text -->
     <div id="sinking-text"
          style="position:absolute; top:40%; left:50%; transform:translate(-50%, -50%);
-                font-size:100pt; color:white; font-family:'Open Sans', sans-serif; font-weight:700; z-index:3;">
+                font-size:200pt; color:white; font-family:'Open Sans', sans-serif; font-weight:700; z-index:3;">
       SINKING TEXT
     </div>
 
@@ -30,11 +30,27 @@
 
   </div>
 
+  <!-- Extra space for scrolling -->
+  <div style="height:3000px;">
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
+  </div>
+
   <!-- JavaScript for Scroll Effects -->
-  <script>
-    const waveTop = document.getElementById("wave-top");
-    const waveBack = document.getElementById("wave-back");
-    const bg = document.getElementById("bg");
+     const bg = document.getElementById("bg");
     const text = document.getElementById("sinking-text");
 
     window.addEventListener("scroll", () => {
@@ -42,10 +58,7 @@
 
       // Move waves to the left when scrolling down, right when scrolling up
       waveTop.style.left = `${300 - scrollY * 0.6}px`;
-      waveBack.style.left = `${300 - scrollY * 0.3}px`;
-
-      // Move text downward, capped at 70% of viewport height
-      const maxTextTop = window.innerHeight * 0.7;
+      waveBack.style.left = `${300 - scrollY * .innerHeight * 0.7;
       const newTextTop = Math.min(40 + scrollY * 0.1, maxTextTop);
       text.style.top = `${newTextTop}%`;
 
