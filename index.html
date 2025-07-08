@@ -1,7 +1,10 @@
+
 <!DOCTYPE html>
 <html>
 <head>
   <title>Scroll Animation Layout</title>
+  <!-- Load Open Sans font -->
+  https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap
 </head>
 <body style="margin:0; padding:0; overflow-x:hidden; background:#000; height:3000px;">
 
@@ -11,20 +14,20 @@
     <img id="bg" src="bg-image.jpg" alt="Background"
          style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:1; transform:scale(1); transition:transform 0.1s;" />
 
-    <!-- Layer 2: Wave Back (Moves Right Slowly) -->
+    <!-- Layer 2: Wave Back (Starts at Y=800px) -->
     <img id="wave-back" src="wave-back.png" alt="Wave Back"
-         style="position:absolute; top:0; left:0; width:100%; height:auto; z-index:2;" />
+         style="position:absolute; top:800px; left:0; width:100%; height:auto; z-index:2;" />
 
     <!-- Layer 3: Sinking Text -->
     <div id="sinking-text"
          style="position:absolute; top:40%; left:50%; transform:translate(-50%, -50%);
-                font-size:48px; color:white; font-weight:bold; z-index:3;">
+                font-size:48px; color:white; font-family:'Open Sans', sans-serif; font-weight:700; z-index:3;">
       SINKING TEXT
     </div>
 
-    <!-- Layer 4: Top Wave (Moves Right Faster) -->
+    <!-- Layer 4: Top Wave (Starts at Y=800px) -->
     <img id="wave-top" src="wave.png" alt="Top Wave"
-         style="position:absolute; top:0; left:0; width:100%; height:auto; z-index:4;" />
+         style="position:absolute; top:800px; left:0; width:100%; height:auto; z-index:4;" />
 
   </div>
 
@@ -38,18 +41,18 @@
     window.addEventListener("scroll", () => {
       const scrollY = window.scrollY;
 
-      // 1. Move wave.png to the right faster
+      // Move wave.png to the right faster
       waveTop.style.left = `${scrollY * 0.6}px`;
 
-      // 2. Move wave-back.png to the right slower
+      // Move wave-back.png to the right slower
       waveBack.style.left = `${scrollY * 0.3}px`;
 
-      // 3. Move text downward, capped at 70% of viewport height
+      // Move text downward, capped at 70% of viewport height
       const maxTextTop = window.innerHeight * 0.7;
       const newTextTop = Math.min(40 + scrollY * 0.1, maxTextTop);
       text.style.top = `${newTextTop}%`;
 
-      // 4. Zoom in background image
+      // Zoom in background image
       const scale = 1 + scrollY * 0.0005;
       bg.style.transform = `scale(${scale})`;
     });
